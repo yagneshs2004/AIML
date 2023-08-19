@@ -6,6 +6,8 @@ import pandas as p
 from sklearn.tree import DecisionTreeClassifier
 
 a=p.read_csv("diabetes.csv")
+cor=a.corr()
+sns.heatmap(cor,annot=True)
 x=a.drop(columns=['Outcome'])
 y=a['Outcome']
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.2)
